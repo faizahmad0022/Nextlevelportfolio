@@ -1,6 +1,8 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 
 const skills = [
   "Next.js",
@@ -50,22 +52,25 @@ export default function Home() {
         </div>
 
         {/* Skills Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-3 gap-4 p-5 mt-8 sm:mt-10 md:w-[80%] w-[70%] mx-auto">
-          {skills.map((skill, index) => (
-            <motion.p
-              key={index}
-              className="bg-green-900 px-6 py-2 rounded-full text-center text-white text-sm sm:text-base transition-all duration-300 ease-in-out hover:scale-110 shadow-lg hover:shadow-green-500/50"
-              initial={{ y: -50, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{
-                duration: 0.5,
-                delay: 0.2 * index, // 👈 staggered effect
-              }}
-            >
-              {skill}
-            </motion.p>
-          ))}
-        </div>
+       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8 sm:mt-10  mx-auto">
+      {skills.map((skill, index) => (
+        <motion.div
+          key={index}
+          initial={{ y: -50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{
+            duration: 0.5,
+            delay: 0.2 * index, // staggered effect
+          }}
+        >
+          <Card className="shadow-lg hover:shadow-green-500/40 transition-all hover:scale-105 duration-300 ease-in-out rounded-2xl">
+            <CardContent className="flex flex-col items-center justify-center p-4 gap-3">
+              <p className="text-lg font-semibold text-center text-gray-800">{skill}</p>
+            </CardContent>
+          </Card>
+        </motion.div>
+      ))}
+    </div>
       </div>
     </motion.div>
   );

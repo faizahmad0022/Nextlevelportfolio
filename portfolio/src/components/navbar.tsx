@@ -27,7 +27,7 @@ export default function Navbar() {
   return (
     <nav className="w-full bg-black shadow-md px-6 py-3 flex items-center justify-center">
       <motion.div
-        className="flex items-center justify-between w-[90%] sm:w-[80%] lg:w-[70%]"
+        className="flex items-center justify-between w-full lg:w-[80%] "
         variants={container}
         initial="hidden"
         animate="show"
@@ -40,7 +40,7 @@ export default function Navbar() {
         </motion.div>
 
         {/* Desktop Links */}
-        <motion.div variants={container} className="hidden md:flex gap-6">
+        <motion.div variants={container} className="hidden md:flex lg:gap-6">
           {[
             { name: "Skills", href: "/" },
             { name: "About Me", href: "/about" },
@@ -76,7 +76,7 @@ export default function Navbar() {
           initial="hidden"
           animate="show"
           variants={container}
-          className="md:hidden flex flex-col gap-4 mt-4 w-full bg-black px-6 pb-4"
+          className="md:hidden flex flex-col mt-4 w-full bg-black px-6 pb-4"
         >
           {[
             { name: "Skills", href: "/" },
