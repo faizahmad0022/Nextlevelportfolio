@@ -2,23 +2,21 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { FiMenu, FiX } from "react-icons/fi";
-import { motion, Variants } from "framer-motion"; // import Variants
+import { motion, Variants } from "framer-motion"; 
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
-  // Variants for container (stagger children)
   const container: Variants = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15, // delay for each link
+        staggerChildren: 0.15, 
       },
     },
   };
-
-  // Variants for items (logo & links)
+  
   const item: Variants = {
     hidden: { y: -40, opacity: 0 },
     show: { y: 0, opacity: 1, transition: { duration: 0.6, ease: "easeOut" } },
@@ -32,14 +30,12 @@ export default function Navbar() {
         initial="hidden"
         animate="show"
       >
-        {/* Logo */}
         <motion.div variants={item} className="text-xl font-bold text-gray-800">
           <span className="text-green-600 font-mono text-lg">
             &lt;Faiz Ahmed/&gt;
           </span>
         </motion.div>
 
-        {/* Desktop Links */}
         <motion.div variants={container} className="hidden md:flex lg:gap-6">
           {[
             { name: "Skills", href: "/" },
@@ -60,7 +56,6 @@ export default function Navbar() {
           ))}
         </motion.div>
 
-        {/* Mobile Menu Button */}
         <motion.button
           variants={item}
           className="md:hidden text-green-600 text-2xl"
@@ -70,7 +65,6 @@ export default function Navbar() {
         </motion.button>
       </motion.div>
 
-      {/* Mobile Dropdown */}
       {isOpen && (
         <motion.div
           initial="hidden"

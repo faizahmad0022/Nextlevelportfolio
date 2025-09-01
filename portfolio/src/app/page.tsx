@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
 const skills = [
@@ -29,7 +28,7 @@ export default function Home() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
-      <div className="bg-green-100 w-full max-w-7xl rounded-2xl  p-6 sm:p-10">
+      <div className="bg-green-100 w-full max-w-7xl rounded-2xl  p-6 sm:p-10 mt-30">
         {/* Heading */}
         <div className="flex flex-col justify-center items-center text-center mt-6 sm:mt-10">
           <motion.p
